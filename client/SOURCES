@@ -1,0 +1,23 @@
+# This required directive specifies the name of the intended binary.
+# The build will append .sys to the driver’s name. 
+TARGETNAME=$(TARGETNAME)
+
+# This required directive names the source files
+SOURCES=client.c
+
+# This required directive dictates the type of binary to be built. Options inlcude:
+# EXPORT_DRIVER, DRIVER_LIBRARY, PROGRAM, DYNLINK 
+TARGETTYPE=PROGRAM
+
+# The type of product being built. Options inlcude:
+# windows, console, nt, ntss
+UMTYPE=console
+
+# Instruct the Build utility to use the multithreaded runtime libraries in a DLL 
+USE_MSVCRT=1
+
+# Specifies the directories for any header files (other than the target OS’s standard directories)
+INCLUDES=$(INCLUDES)
+
+# Specifies additional library (.lib) files that should be linked in
+TARGETLIBS=$(TARGETLIBS)

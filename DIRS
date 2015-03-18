@@ -1,0 +1,2 @@
+# List of subdirectories that the Build utility will build every time that it runs
+DIRS=driver client

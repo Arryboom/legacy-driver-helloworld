@@ -1,0 +1,3 @@
+@echo off
+
+"%HELLOWORLD_HOME%\client\obj%BUILD_ALT_DIR%\%_BUILDARCH%\%TARGETNAME%.exe"
