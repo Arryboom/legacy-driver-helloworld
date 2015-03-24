@@ -11,7 +11,7 @@ You will need the following software:
 * [Git for Windows](http://msysgit.github.io/)
 * [Windows Sysinternals Suite](https://technet.microsoft.com/en-us/sysinternals/bb842062.aspx)
 
-## Building the Code
+## Building and Running the Code
 
 ### 1. Clone the source code to your machine
  
@@ -27,6 +27,7 @@ NOTE: Make sure that the repository resides in a folder structure that does not 
  
 * certificate.pfx - This is the Software Publisher Certificate. You can purchase one of these from a Certificate Authority such as [GlobalSign](https://www.globalsign.com/en/code-signing/microsoft-authenticode/).
 * cross-certificate.pfx - This is the Microsoft Cross-Certificate. This can be obtained freely from [Microsoft](https://msdn.microsoft.com/en-us/library/windows/hardware/dn170454.aspx). 
+
 
 ### 3. Update settings in the setenv.bat file
 At a minimum, you will want to update the ``PFX_PWD=`` setting with the password that protects the PFX file containing your code signing certificate. You may also want to modify the ``BUILD_ENV=`` setting to change the build environment.   
@@ -64,3 +65,18 @@ run.bat
 ```
 
 NOTE: If you are installing a checked version of the driver, you should see trace statements in DbgView. You should also see trace statements appear in the console. 
+
+## References
+
+* [Windows Driver Kit 7.1.0 Documentation in CHM format](http://download.microsoft.com/download/3/3/C/33CFEF4D-21DA-4229-BC17-3EAC7A7EABE1/WDKDocs_12112009.chm)
+* [Programming the Windows Driver Model eBook](https://www-user.tu-chemnitz.de/~heha/oney_wdm/content.htm)
+* [Kernel Mode Driver Tutorial: Part 1: The Skeleton KMD](http://www.reverse-engineering.info/SystemCoding/SkeletonKMD_Tutorial.htm)
+* [Essentials Of Building Windows Drivers](http://www.wd-3.com/archive/winbuild.htm)
+* [Getting Started Writing Windows Drivers](http://www.osronline.com/article.cfm?article=20)
+* [Building and deploying a basic WDF Kernel Mode Driver](http://www.codeproject.com/Articles/13090/Building-and-deploying-a-basic-WDF-Kernel-Mode-Dri)
+* [Driver Development Part 1: Introduction to Drivers](http://www.codeproject.com/Articles/9504/Driver-Development-Part-1-Introduction-to-Drivers)
+* [Introduction to Device Drivers](http://www.catch22.net/tuts/introduction-device-drivers)
+* [Userland/Kernel communication – DeviceIoControl method](http://ericasselin.com/userlandkernel-communication-deviceiocontrol-method)
+* [TDI Overview](http://codemachine.com/article_tdi.html)
+* [An Introduction To Writing TDI Filter Drivers](https://www.iseclab.org/papers/Writing_TDI_Drivers.pdf)
+* [VirtualBox Windows Kernel Debugging Tips](https://www.virtualbox.org/wiki/Windows_Kernel_Debugging)
