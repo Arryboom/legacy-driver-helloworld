@@ -80,3 +80,4 @@ NOTE: You should see trace statements in DbgView and in the Win32 client console
 * [TDI Overview](http://codemachine.com/article_tdi.html)
 * [An Introduction To Writing TDI Filter Drivers](https://www.iseclab.org/papers/Writing_TDI_Drivers.pdf)
 * [VirtualBox Windows Kernel Debugging Tips](https://www.virtualbox.org/wiki/Windows_Kernel_Debugging)
+* [Windows driver debugging with WinDbg and VMWare](https://briolidz.wordpress.com/2012/03/28/windows-driver-debugging-with-windbg-and-vmware/)
