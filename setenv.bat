@@ -12,6 +12,7 @@ set DDK_HOME=C:\WINDDK\7600.16385.1
 REM Name used for binaries and service
 set TARGETNAME=HelloWorld
 
+REM Home directory for project root
 set HELLOWORLD_HOME=%CD%
 
 REM Set the compiler warning level to strict
