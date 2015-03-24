@@ -4,7 +4,7 @@
 #include "driver.h"
 #include "../common/common.h"
 
-#define TRACE(...) KdPrint(("HelloWorld: "__VA_ARGS__))
+#define TRACE(...) DbgPrint("HelloWorld: "__VA_ARGS__)
 
 extern PDEVICE_OBJECT g_pDeviceObject = NULL;
 extern UNICODE_STRING g_DeviceName = RTL_CONSTANT_STRING(L"\\Device\\HelloWorld");
@@ -127,7 +127,7 @@ NTSTATUS DriverDispatch(IN PDEVICE_OBJECT DeviceObject, IN PIRP irp)
     
     // Sent when the user mode application has called the WriteFile function.
     case IRP_MJ_WRITE:
-     TRACE("IRP_MJ_WRITE: %s \r\n", irp->AssociatedIrp.SystemBuffer);
+     TRACE("IRP_MJ_WRITE: %s \r\n", (char*)irp->AssociatedIrp.SystemBuffer);
      status = STATUS_SUCCESS;
      break;
     
@@ -136,7 +136,7 @@ NTSTATUS DriverDispatch(IN PDEVICE_OBJECT DeviceObject, IN PIRP irp)
      TRACE("IRP_MJ_DEVICE_CONTROL \r\n");
      if(irpStack->Parameters.DeviceIoControl.IoControlCode == IOCTL_REQUEST_RESPONSE) {
       // irpStack->Parameters.DeviceIoControl.InputBufferLength
-      TRACE("IOCTL_REQUEST_RESPONSE: %s \r\n", irp->AssociatedIrp.SystemBuffer);
+      TRACE("IOCTL_REQUEST_RESPONSE: %s \r\n", (char*)irp->AssociatedIrp.SystemBuffer);
       RtlStringCbCopyA(irp->AssociatedIrp.SystemBuffer, irpStack->Parameters.DeviceIoControl.OutputBufferLength, "IRP_MJ_DEVICE_CONTROL");
       irp->IoStatus.Information = irpStack->Parameters.DeviceIoControl.OutputBufferLength;
       status = STATUS_SUCCESS;

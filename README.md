@@ -48,7 +48,7 @@ build.bat
 
 ### 5. Start DbgView
 
-Start the Sysinternals DbgView.exe utility as Administrator and enable the ``Capture Kernel`` and ``Enable Verbose Kernel Output`` settings. Checked (debug) versions of the driver will output trace statements that can be viewed with this tool.  
+Start the Sysinternals DbgView.exe utility as Administrator and enable the ``Capture Kernel`` and ``Enable Verbose Kernel Output`` settings. Both Checked (Debug) and Free (Release) versions of the driver will output trace statements that can be viewed with this tool.  
 
 ### 6. Install the Device Driver
 
@@ -56,7 +56,7 @@ Start the Sysinternals DbgView.exe utility as Administrator and enable the ``Cap
 install.bat
 ```
 
-NOTE: If you are installing a checked version of the driver, you should see trace statements in DbgView.
+NOTE: You should see trace statements in DbgView.
 
 ### 7. Run the Win32 client program
 
@@ -64,7 +64,7 @@ NOTE: If you are installing a checked version of the driver, you should see trac
 run.bat
 ```
 
-NOTE: If you are installing a checked version of the driver, you should see trace statements in DbgView. You should also see trace statements appear in the console. 
+NOTE: You should see trace statements in DbgView and in the Win32 client console. 
 
 ## References
 

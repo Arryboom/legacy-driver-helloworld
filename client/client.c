@@ -1,5 +1,7 @@
 #include <Windows.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <strsafe.h>
 
 #include "../common/common.h"
 
@@ -50,7 +52,7 @@ int _cdecl main(void)
      printf("ReadFile Result: %s \r\n",buffer);
      
      // Write data to the device using the WriteFile API
-     strcpy(buffer,"WriteFile");
+     StringCchCopyA(buffer,_countof(buffer),"WriteFile");
      bSuccess = WriteFile(hFile, buffer, sizeof(buffer), NULL, NULL);
      if(bSuccess == 0)
      {
@@ -60,7 +62,7 @@ int _cdecl main(void)
      }
     
      // Write/Read data to/from the device using the DeviceIoControl API
-     strcpy(buffer,"DeviceIoControl");
+     StringCchCopyA(buffer,_countof(buffer),"DeviceIoControl");
      bSuccess = DeviceIoControl(
        hFile,
        IOCTL_REQUEST_RESPONSE,
